@@ -1,0 +1,472 @@
+9E-0-Delayed	12529
+9E-0-Not Delayed	52982
+9E-1000-Delayed	2171
+9E-1000-Not Delayed	5787
+9E-1200-Delayed	4
+9E-1200-Not Delayed	3
+9E-1600-Delayed	45
+9E-1600-Not Delayed	50
+9E-200-Delayed	28911
+9E-200-Not Delayed	130729
+9E-400-Delayed	31004
+9E-400-Not Delayed	129150
+9E-600-Delayed	17044
+9E-600-Not Delayed	64539
+9E-800-Delayed	6718
+9E-800-Not Delayed	22842
+AA-0-Delayed	113137
+AA-0-Not Delayed	658304
+AA-1000-Delayed	449107
+AA-1000-Not Delayed	1581849
+AA-1200-Delayed	279467
+AA-1200-Not Delayed	937879
+AA-1400-Delayed	217516
+AA-1400-Not Delayed	771548
+AA-1600-Delayed	408563
+AA-1600-Not Delayed	1422708
+AA-200-Delayed	298376
+AA-200-Not Delayed	1483167
+AA-400-Delayed	320837
+AA-400-Not Delayed	1551757
+AA-600-Delayed	442287
+AA-600-Not Delayed	1662232
+AA-800-Delayed	417100
+AA-800-Not Delayed	1586721
+AQ-0-Delayed	9401
+AQ-0-Not Delayed	99950
+AQ-1600-Delayed	2149
+AQ-1600-Not Delayed	10485
+AQ-200-Delayed	2162
+AQ-200-Not Delayed	21947
+AQ-400-Delayed	562
+AQ-400-Not Delayed	4851
+AS-0-Delayed	49614
+AS-0-Not Delayed	193318
+AS-1000-Delayed	52537
+AS-1000-Not Delayed	165934
+AS-1200-Delayed	2025
+AS-1200-Not Delayed	6546
+AS-1400-Delayed	65368
+AS-1400-Not Delayed	169601
+AS-1600-Delayed	21015
+AS-1600-Not Delayed	60902
+AS-200-Delayed	88031
+AS-200-Not Delayed	378799
+AS-400-Delayed	75611
+AS-400-Not Delayed	297277
+AS-600-Delayed	113419
+AS-600-Not Delayed	345800
+AS-800-Delayed	160155
+AS-800-Not Delayed	536281
+B6-0-Delayed	6550
+B6-0-Not Delayed	13870
+B6-1000-Delayed	60410
+B6-1000-Not Delayed	164360
+B6-1200-Delayed	4415
+B6-1200-Not Delayed	16359
+B6-1400-Delayed	8073
+B6-1400-Not Delayed	28319
+B6-1600-Delayed	46335
+B6-1600-Not Delayed	155656
+B6-200-Delayed	35744
+B6-200-Not Delayed	117792
+B6-400-Delayed	10325
+B6-400-Not Delayed	31364
+B6-600-Delayed	4861
+B6-600-Not Delayed	13009
+B6-800-Delayed	22328
+B6-800-Not Delayed	59347
+CO-0-Delayed	157649
+CO-0-Not Delayed	724075
+CO-1000-Delayed	209974
+CO-1000-Not Delayed	742744
+CO-1200-Delayed	172394
+CO-1200-Not Delayed	675199
+CO-1400-Delayed	75460
+CO-1400-Not Delayed	228241
+CO-1600-Delayed	230515
+CO-1600-Not Delayed	712747
+CO-200-Delayed	180026
+CO-200-Not Delayed	918809
+CO-400-Delayed	164029
+CO-400-Not Delayed	670236
+CO-600-Delayed	176720
+CO-600-Not Delayed	678873
+CO-800-Delayed	267341
+CO-800-Not Delayed	1019202
+DH-0-Delayed	21981
+DH-0-Not Delayed	92527
+DH-1400-Delayed	27
+DH-1400-Not Delayed	5
+DH-1600-Delayed	1051
+DH-1600-Not Delayed	2414
+DH-200-Delayed	55881
+DH-200-Not Delayed	229452
+DH-400-Delayed	44981
+DH-400-Not Delayed	146116
+DH-600-Delayed	18098
+DH-600-Not Delayed	40451
+DH-800-Delayed	5228
+DH-800-Not Delayed	11475
+DL-0-Delayed	301256
+DL-0-Not Delayed	1507785
+DL-1000-Delayed	237087
+DL-1000-Not Delayed	840479
+DL-1200-Delayed	93697
+DL-1200-Not Delayed	286791
+DL-1400-Delayed	143805
+DL-1400-Not Delayed	457017
+DL-1600-Delayed	341706
+DL-1600-Not Delayed	1028420
+DL-200-Delayed	631344
+DL-200-Not Delayed	2636525
+DL-400-Delayed	830195
+DL-400-Not Delayed	3207319
+DL-600-Delayed	501703
+DL-600-Not Delayed	1655292
+DL-800-Delayed	328131
+DL-800-Not Delayed	1179380
+EA-0-Delayed	16584
+EA-0-Not Delayed	92844
+EA-1000-Delayed	23553
+EA-1000-Not Delayed	64532
+EA-1200-Delayed	2807
+EA-1200-Not Delayed	5917
+EA-1400-Delayed	5415
+EA-1400-Not Delayed	12651
+EA-1600-Delayed	6885
+EA-1600-Not Delayed	20606
+EA-200-Delayed	31128
+EA-200-Not Delayed	172243
+EA-400-Delayed	37322
+EA-400-Not Delayed	189321
+EA-600-Delayed	24077
+EA-600-Not Delayed	96339
+EA-800-Delayed	17655
+EA-800-Not Delayed	61659
+EV-0-Delayed	69531
+EV-0-Not Delayed	199226
+EV-1000-Delayed	7728
+EV-1000-Not Delayed	23438
+EV-1200-Delayed	738
+EV-1200-Not Delayed	2669
+EV-1400-Delayed	465
+EV-1400-Not Delayed	2114
+EV-1600-Delayed	40
+EV-1600-Not Delayed	38
+EV-200-Delayed	144024
+EV-200-Not Delayed	409358
+EV-400-Delayed	101534
+EV-400-Not Delayed	286710
+EV-600-Delayed	80015
+EV-600-Not Delayed	200565
+EV-800-Delayed	32022
+EV-800-Not Delayed	84878
+F9-1000-Delayed	8358
+F9-1000-Not Delayed	30599
+F9-1200-Delayed	1041
+F9-1200-Not Delayed	4143
+F9-1400-Delayed	5007
+F9-1400-Not Delayed	19250
+F9-1600-Delayed	4519
+F9-1600-Not Delayed	10540
+F9-200-Delayed	4252
+F9-200-Not Delayed	18373
+F9-400-Delayed	4012
+F9-400-Not Delayed	19299
+F9-600-Delayed	15448
+F9-600-Not Delayed	68817
+F9-800-Delayed	24049
+F9-800-Not Delayed	97135
+FL-0-Delayed	212
+FL-0-Not Delayed	1161
+FL-1000-Delayed	14165
+FL-1000-Not Delayed	54371
+FL-1200-Delayed	2503
+FL-1200-Not Delayed	10768
+FL-1400-Delayed	1402
+FL-1400-Not Delayed	6172
+FL-1600-Delayed	10437
+FL-1600-Not Delayed	28628
+FL-200-Delayed	49231
+FL-200-Not Delayed	164353
+FL-400-Delayed	104316
+FL-400-Not Delayed	342456
+FL-600-Delayed	72638
+FL-600-Not Delayed	208275
+FL-800-Delayed	35654
+FL-800-Not Delayed	142574
+HA-0-Delayed	6117
+HA-0-Not Delayed	181653
+HA-1600-Delayed	10439
+HA-1600-Not Delayed	40366
+HA-200-Delayed	1291
+HA-200-Not Delayed	32985
+HA-600-Not Delayed	4
+HA-800-Not Delayed	4
+HP-0-Delayed	34245
+HP-0-Not Delayed	222187
+HP-1000-Delayed	64654
+HP-1000-Not Delayed	237262
+HP-1200-Delayed	23307
+HP-1200-Not Delayed	76148
+HP-1400-Delayed	49086
+HP-1400-Not Delayed	125255
+HP-1600-Delayed	135431
+HP-1600-Not Delayed	330831
+HP-200-Delayed	226853
+HP-200-Not Delayed	1116804
+HP-400-Delayed	55494
+HP-400-Not Delayed	232080
+HP-600-Delayed	84485
+HP-600-Not Delayed	364220
+HP-800-Delayed	37395
+HP-800-Not Delayed	157025
+ML (1)-0-Delayed	127
+ML (1)-0-Not Delayed	1116
+ML (1)-1000-Delayed	1297
+ML (1)-1000-Not Delayed	4317
+ML (1)-1400-Delayed	531
+ML (1)-1400-Not Delayed	2236
+ML (1)-1600-Delayed	601
+ML (1)-1600-Not Delayed	2575
+ML (1)-200-Delayed	2887
+ML (1)-200-Not Delayed	19188
+ML (1)-400-Delayed	1110
+ML (1)-400-Not Delayed	7171
+ML (1)-600-Delayed	2170
+ML (1)-600-Not Delayed	12704
+ML (1)-800-Delayed	1928
+ML (1)-800-Not Delayed	9161
+MQ-0-Delayed	218702
+MQ-0-Not Delayed	921969
+MQ-1000-Delayed	16521
+MQ-1000-Not Delayed	41976
+MQ-1200-Delayed	4574
+MQ-1200-Not Delayed	11135
+MQ-200-Delayed	297080
+MQ-200-Not Delayed	1016391
+MQ-400-Delayed	181305
+MQ-400-Not Delayed	480456
+MQ-600-Delayed	102886
+MQ-600-Not Delayed	284528
+MQ-800-Delayed	53054
+MQ-800-Not Delayed	159276
+NW-0-Delayed	139073
+NW-0-Not Delayed	817737
+NW-1000-Delayed	193802
+NW-1000-Not Delayed	667031
+NW-1200-Delayed	86927
+NW-1200-Not Delayed	310552
+NW-1400-Delayed	120334
+NW-1400-Not Delayed	430121
+NW-1600-Delayed	151604
+NW-1600-Not Delayed	478947
+NW-200-Delayed	383757
+NW-200-Not Delayed	1962593
+NW-400-Delayed	407230
+NW-400-Not Delayed	1701037
+NW-600-Delayed	205845
+NW-600-Not Delayed	888222
+NW-800-Delayed	226629
+NW-800-Not Delayed	875789
+OH-0-Delayed	28745
+OH-0-Not Delayed	118745
+OH-1000-Delayed	9730
+OH-1000-Not Delayed	23378
+OH-1200-Delayed	181
+OH-1200-Not Delayed	840
+OH-1400-Delayed	368
+OH-1400-Not Delayed	461
+OH-200-Delayed	96224
+OH-200-Not Delayed	359050
+OH-400-Delayed	92051
+OH-400-Not Delayed	324071
+OH-600-Delayed	60117
+OH-600-Not Delayed	185984
+OH-800-Delayed	30811
+OH-800-Not Delayed	83364
+OO-0-Delayed	148467
+OO-0-Not Delayed	756085
+OO-1000-Delayed	12653
+OO-1000-Not Delayed	40426
+OO-1200-Delayed	4411
+OO-1200-Not Delayed	12510
+OO-1400-Delayed	2371
+OO-1400-Not Delayed	6390
+OO-1600-Delayed	87
+OO-1600-Not Delayed	397
+OO-200-Delayed	148204
+OO-200-Not Delayed	694536
+OO-400-Delayed	131020
+OO-400-Not Delayed	578383
+OO-600-Delayed	53066
+OO-600-Not Delayed	224669
+OO-800-Delayed	41253
+OO-800-Not Delayed	165606
+PA (1)-0-Delayed	12539
+PA (1)-0-Not Delayed	66259
+PA (1)-1000-Delayed	12149
+PA (1)-1000-Not Delayed	40515
+PA (1)-1200-Delayed	1699
+PA (1)-1200-Not Delayed	5235
+PA (1)-1400-Delayed	1242
+PA (1)-1400-Not Delayed	3074
+PA (1)-1600-Delayed	7743
+PA (1)-1600-Not Delayed	19446
+PA (1)-200-Delayed	12479
+PA (1)-200-Not Delayed	68160
+PA (1)-400-Delayed	6723
+PA (1)-400-Not Delayed	20231
+PA (1)-600-Delayed	3129
+PA (1)-600-Not Delayed	8281
+PA (1)-800-Delayed	4156
+PA (1)-800-Not Delayed	17301
+PI-0-Delayed	57617
+PI-0-Not Delayed	217574
+PI-1000-Delayed	1276
+PI-1000-Not Delayed	2255
+PI-1200-Delayed	2043
+PI-1200-Not Delayed	3288
+PI-1400-Delayed	249
+PI-1400-Not Delayed	218
+PI-1600-Delayed	7092
+PI-1600-Not Delayed	10606
+PI-200-Delayed	75767
+PI-200-Not Delayed	242918
+PI-400-Delayed	43728
+PI-400-Not Delayed	106176
+PI-600-Delayed	13291
+PI-600-Not Delayed	31155
+PI-800-Delayed	15484
+PI-800-Not Delayed	31472
+PS-0-Delayed	1781
+PS-0-Not Delayed	5783
+PS-200-Delayed	10967
+PS-200-Not Delayed	40449
+PS-400-Delayed	3891
+PS-400-Not Delayed	12566
+PS-600-Delayed	1521
+PS-600-Not Delayed	3233
+PS-800-Delayed	565
+PS-800-Not Delayed	1537
+TW-0-Delayed	41401
+TW-0-Not Delayed	224011
+TW-1000-Delayed	65560
+TW-1000-Not Delayed	212178
+TW-1200-Delayed	24221
+TW-1200-Not Delayed	77269
+TW-1400-Delayed	48644
+TW-1400-Not Delayed	143671
+TW-1600-Delayed	70643
+TW-1600-Not Delayed	188098
+TW-200-Delayed	161700
+TW-200-Not Delayed	779063
+TW-400-Delayed	123428
+TW-400-Not Delayed	521890
+TW-600-Delayed	105540
+TW-600-Not Delayed	426724
+TW-800-Delayed	104395
+TW-800-Not Delayed	355069
+TZ-0-Delayed	322
+TZ-0-Not Delayed	1042
+TZ-1000-Delayed	3314
+TZ-1000-Not Delayed	14855
+TZ-1200-Delayed	21
+TZ-1200-Not Delayed	49
+TZ-1400-Delayed	3042
+TZ-1400-Not Delayed	12277
+TZ-1600-Delayed	10242
+TZ-1600-Not Delayed	38815
+TZ-200-Delayed	1797
+TZ-200-Not Delayed	10199
+TZ-400-Delayed	1305
+TZ-400-Not Delayed	7440
+TZ-600-Delayed	14448
+TZ-600-Not Delayed	47191
+TZ-800-Delayed	6422
+TZ-800-Not Delayed	33226
+UA-0-Delayed	124500
+UA-0-Not Delayed	548657
+UA-1000-Delayed	144452
+UA-1000-Not Delayed	481447
+UA-1200-Delayed	24326
+UA-1200-Not Delayed	77094
+UA-1400-Delayed	133159
+UA-1400-Not Delayed	418712
+UA-1600-Delayed	574678
+UA-1600-Not Delayed	1814939
+UA-200-Delayed	457540
+UA-200-Not Delayed	1683932
+UA-400-Delayed	422698
+UA-400-Not Delayed	1521648
+UA-600-Delayed	535984
+UA-600-Not Delayed	1859046
+UA-800-Delayed	472294
+UA-800-Not Delayed	1675804
+US-0-Delayed	282803
+US-0-Not Delayed	1515879
+US-1000-Delayed	113824
+US-1000-Not Delayed	375933
+US-1200-Delayed	51281
+US-1200-Not Delayed	158426
+US-1400-Delayed	43913
+US-1400-Not Delayed	118617
+US-1600-Delayed	231900
+US-1600-Not Delayed	654772
+US-200-Delayed	977051
+US-200-Not Delayed	4248110
+US-400-Delayed	530870
+US-400-Not Delayed	1993667
+US-600-Delayed	243380
+US-600-Not Delayed	895114
+US-800-Delayed	288781
+US-800-Not Delayed	1017292
+WN-0-Delayed	196171
+WN-0-Not Delayed	1062455
+WN-1000-Delayed	111254
+WN-1000-Not Delayed	569589
+WN-1200-Delayed	51049
+WN-1200-Not Delayed	220981
+WN-1400-Delayed	47160
+WN-1400-Not Delayed	236945
+WN-1600-Delayed	68449
+WN-1600-Not Delayed	337466
+WN-200-Delayed	1325176
+WN-200-Not Delayed	6338216
+WN-400-Delayed	477723
+WN-400-Not Delayed	2277924
+WN-600-Delayed	277504
+WN-600-Not Delayed	1293795
+WN-800-Delayed	151702
+WN-800-Not Delayed	725992
+XE-0-Delayed	50622
+XE-0-Not Delayed	168133
+XE-1000-Delayed	38820
+XE-1000-Not Delayed	121738
+XE-1200-Delayed	9585
+XE-1200-Not Delayed	36778
+XE-1400-Delayed	1702
+XE-1400-Not Delayed	8368
+XE-200-Delayed	153451
+XE-200-Not Delayed	530889
+XE-400-Delayed	120520
+XE-400-Not Delayed	414922
+XE-600-Delayed	80326
+XE-600-Not Delayed	255700
+XE-800-Delayed	67202
+XE-800-Not Delayed	231705
+YV-0-Delayed	48249
+YV-0-Not Delayed	175809
+YV-1000-Delayed	4958
+YV-1000-Not Delayed	16326
+YV-1200-Delayed	2990
+YV-1200-Not Delayed	7114
+YV-200-Delayed	57661
+YV-200-Not Delayed	190425
+YV-400-Delayed	51575
+YV-400-Not Delayed	145803
+YV-600-Delayed	20254
+YV-600-Not Delayed	50473
+YV-800-Delayed	11968
+YV-800-Not Delayed	38685
