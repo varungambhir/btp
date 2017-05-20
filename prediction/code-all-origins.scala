@@ -1,16 +1,13 @@
 :paste
 
+
 import org.apache.spark.rdd._
+import scala.collection.JavaConverters._
+import au.com.bytecode.opencsv.CSVReader
 
 import java.io._
 import org.joda.time._
 import org.joda.time.format._
-
-import org.apache.spark.SparkContext._
-import scala.collection.JavaConverters._
-import au.com.bytecode.opencsv.CSVReader
-import java.io._
-
 
 case class DelayRec(year: String,
                     month: String,
@@ -64,10 +61,48 @@ def prepFlightDelays(infile: String): RDD[DelayRec] = {
     }.map(list => list(0))
     .filter(rec => rec.year != "Year")
     .filter(rec => rec.cancelled == "0")
-    .filter(rec => rec.origin == "ORD")
+    //.filter(rec => rec.origin == "ORD")
 }
 
+val data = prepFlightDelays("/input/2001.csv").map(rec => rec.gen_features._2)
+data.take(5).map(x => x mkString ",").foreach(println)
 
+var i = 0;
+for(i <- 2002 to 2008) {
+  val data_i = prepFlightDelays("/input/" + i.toString + ".csv").map(rec => rec.gen_features._2)
+  data_i.take(5).map(x => x mkString ",").foreach(println)
+  data.union(data_i)
+}
+
+//val data_2007 = prepFlightDelays("/input/2007.csv").map(rec => rec.gen_features._2)
+//val data_2008 = prepFlightDelays("/input/2008.csv").map(rec => rec.gen_features._2)
+//data_2007.take(5).map(x => x mkString ",").foreach(println)
+data.take(5).map(x => x mkString ",").foreach(println)
+
+val Array(data_2007, data_2008) = data.randomSplit(Array(0.80, 0.20))
+
+import org.apache.spark.mllib.regression.LabeledPoint
+import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.mllib.feature.StandardScaler
+
+def parseData(vals: Array[Double]): LabeledPoint = {
+  LabeledPoint(if (vals(0)>=15) 1.0 else 0.0, Vectors.dense(vals.drop(1)))
+}
+
+// Prepare training set
+val parsedTrainData = data_2007.map(parseData)
+parsedTrainData.cache
+val scaler = new StandardScaler(withMean = true, withStd = true).fit(parsedTrainData.map(x => x.features))
+val scaledTrainData = parsedTrainData.map(x => LabeledPoint(x.label, scaler.transform(Vectors.dense(x.features.toArray))))
+scaledTrainData.cache
+
+// Prepare test/validation set
+val parsedTestData = data_2008.map(parseData)
+parsedTestData.cache
+val scaledTestData = parsedTestData.map(x => LabeledPoint(x.label, scaler.transform(Vectors.dense(x.features.toArray))))
+scaledTestData.cache
+
+scaledTrainData.take(3).map(x => (x.label, x.features)).foreach(println)
 
 // Function to compute evaluation metrics
 def eval_metrics(labelsAndPreds: RDD[(Double, Double)]) : Tuple2[Array[Double], Array[Double]] = {
@@ -83,90 +118,20 @@ def eval_metrics(labelsAndPreds: RDD[(Double, Double)]) : Tuple2[Array[Double], 
     new Tuple2(Array(tp, tn, fp, fn), Array(precision, recall, F_measure, accuracy))
 }
 
+import org.apache.spark.mllib.classification.LogisticRegressionWithSGD
 
+// Build the Logistic Regression model
+val model_lr = LogisticRegressionWithSGD.train(scaledTrainData, numIterations=100)
 
-
-// function to do a preprocessing step for a given file
-
-def preprocess_spark(delay_file: String, weather_file: String): RDD[Array[Double]] = { 
-  // Read wether data
-  val delayRecs = prepFlightDelays(delay_file).map{ rec => 
-        val features = rec.gen_features
-        (features._1, features._2)
-  }
-
-  // Read weather data into RDDs
-  val station_inx = 0
-  val date_inx = 1
-  val metric_inx = 2
-  val value_inx = 3
-
-  def filterMap(wdata:RDD[Array[String]], metric:String):RDD[(String,Double)] = {
-    wdata.filter(vals => vals(metric_inx) == metric).map(vals => (vals(date_inx), vals(value_inx).toDouble))
-  }
-
-  val wdata = sc.textFile(weather_file).map(line => line.split(","))
-                    .filter(vals => vals(station_inx) == "USW00094846")
-  val w_tmin = filterMap(wdata,"TMIN")
-  val w_tmax = filterMap(wdata,"TMAX")
-  val w_prcp = filterMap(wdata,"PRCP")
-  val w_snow = filterMap(wdata,"SNOW")
-  val w_awnd = filterMap(wdata,"AWND")
-  delayRecs.join(w_tmin).map(vals => (vals._1, vals._2._1 ++ Array(vals._2._2)))
-           .join(w_tmax).map(vals => (vals._1, vals._2._1 ++ Array(vals._2._2)))
-           .join(w_prcp).map(vals => (vals._1, vals._2._1 ++ Array(vals._2._2)))
-           .join(w_snow).map(vals => (vals._1, vals._2._1 ++ Array(vals._2._2)))
-           .join(w_awnd).map(vals => vals._2._1 ++ Array(vals._2._2))
+// Predict
+val labelsAndPreds_lr = scaledTestData.map { point =>
+    val pred = model_lr.predict(point.features)
+    (pred, point.label)
 }
-
-
-// collecting all data
-val data = preprocess_spark("/input/2001.csv", "/input/weather-2001.csv")
-data.take(5).map(x => x mkString ",").foreach(println)
-var i = 0;
-for(i <- 2002 to 2008) {
-  val data_i = preprocess_spark("/input/" + i.toString + ".csv", "/input/weather-" + i.toString + ".csv")
-  data_i.take(5).map(x => x mkString ",").foreach(println)
-  data.union(data_i)
-}
-data.cache
-
-data.take(5).map(x => x mkString ",").foreach(println)
-
-// splitting data into 80-20 train-test
-val Array(data_2007, data_2008) = data.randomSplit(Array(0.80, 0.20))
-
-
-// modeling with weather data
-
-import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.feature.StandardScaler
-
-def parseData(vals: Array[Double]): LabeledPoint = {
-  LabeledPoint(if (vals(0)>=15) 1.0 else 0.0, Vectors.dense(vals.drop(1)))
-}
-
-// Prepare training set
-val parsedTrainData = data_2007.map(parseData)
-val scaler = new StandardScaler(withMean = true, withStd = true).fit(parsedTrainData.map(x => x.features))
-val scaledTrainData = parsedTrainData.map(x => LabeledPoint(x.label, scaler.transform(Vectors.dense(x.features.toArray))))
-parsedTrainData.cache
-scaledTrainData.cache
-
-// Prepare test/validation set
-val parsedTestData = data_2008.map(parseData)
-val scaledTestData = parsedTestData.map(x => LabeledPoint(x.label, scaler.transform(Vectors.dense(x.features.toArray))))
-parsedTestData.cache
-scaledTestData.cache
-
-scaledTrainData.take(3).map(x => (x.label, x.features)).foreach(println)
-
-
-// SVM
+val m_lr = eval_metrics(labelsAndPreds_lr)._2
+println("Logistic Regression: precision = %.2f, recall = %.2f, F1 = %.2f, accuracy = %.2f".format(m_lr(0), m_lr(1), m_lr(2), m_lr(3)))
 
 import org.apache.spark.mllib.classification.SVMWithSGD
-import org.apache.spark.mllib.optimization.L1Updater
 
 // Build the SVM model
 val svmAlg = new SVMWithSGD()
@@ -183,8 +148,6 @@ val labelsAndPreds_svm = scaledTestData.map { point =>
 val m_svm = eval_metrics(labelsAndPreds_svm)._2
 println("SVM: precision = %.2f, recall = %.2f, F1 = %.2f, accuracy = %.2f".format(m_svm(0), m_svm(1), m_svm(2), m_svm(3)))
 
-
-
 import org.apache.spark.mllib.tree.DecisionTree
 
 // Build the Decision Tree model
@@ -193,10 +156,10 @@ val categoricalFeaturesInfo = Map[Int, Int]()
 val impurity = "gini"
 val maxDepth = 10
 val maxBins = 100
-val model_dt = DecisionTree.trainClassifier(scaledTrainData, numClasses, categoricalFeaturesInfo, impurity, maxDepth, maxBins)
+val model_dt = DecisionTree.trainClassifier(parsedTrainData, numClasses, categoricalFeaturesInfo, impurity, maxDepth, maxBins)
 
 // Predict
-val labelsAndPreds_dt = scaledTestData.map { point =>
+val labelsAndPreds_dt = parsedTestData.map { point =>
     val pred = model_dt.predict(point.features)
     (pred, point.label)
 }

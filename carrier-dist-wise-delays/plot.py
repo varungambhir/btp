@@ -46,17 +46,14 @@ for airline in airlines:
         lst.append((airlines[airline]["Delayed"][i][0], value))
     plt_data[airline] = lst
 
-# for x in plt_data:
-#     print x, plt_data[x]
 
-import matplotlib.pyplot as plt
+
 radius = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0]
 area = [3.14159, 12.56636, 28.27431, 50.26544, 78.53975, 113.09724]
 square = [1.0, 4.0, 9.0, 16.0, 25.0, 36.0]
 for airline in plt_data:
     plt.plot([x for x,y in plt_data[airline]], [y for x,y in plt_data[airline]], label=airline)
 
-print plt.xticks()
 plt.xlabel('Distance Group')
 plt.ylabel('On-time percentage')
 plt.title('Distance V.S. Arrival On-Time Performance of Airlines')
