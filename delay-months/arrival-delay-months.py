@@ -13,6 +13,7 @@ with open('FINAL-output-2001-2008-arr-delay', 'r') as f:
     flt2008 = [x for x in reader]
 months=[]
 delay=[]
+ind=xrange(0,13)
 for i in xrange(0, len(flt2008)):
     months.append(float(flt2008[i][0]))
     delay.append(float(flt2008[i][1]))
@@ -23,7 +24,7 @@ plt.figure(figsize=(12, 6))
 plt.bar(months, delay,width ,color="blue")
 
 #flt2008[['Month','DepDelay']].groupby('Month').mean().plot(kind='bar', color=dark2_colors[0])
-#plt.xticks(rotation=0)
+plt.xticks(ind)
 plt.xlabel('Month of Year')
 plt.ylabel('Departure Delay in Min')
 plt.title('Average Arrival Delay by Month')
