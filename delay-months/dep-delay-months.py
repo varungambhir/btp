@@ -12,7 +12,7 @@ from matplotlib.colors import ListedColormap
 import itertools
 flt2008=[]
 
-with open('dep-delay', 'r') as f:
+with open('FINAL-output-2001-2008-dep-delay', 'r') as f:
     reader = csv.reader(f, delimiter='\t')
     flt2008 = [x for x in reader]
 months=[]
