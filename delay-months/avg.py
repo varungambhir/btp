@@ -23,4 +23,4 @@ for month in sorted(month_dict):
     lst = month_dict[month]
     numerator = reduce(lambda x ,y: x + y[0]*y[1], lst, 0)
     denominator = sum([y for (x, y) in lst])
-    print "%s\t%f" % (month, numerator/denominator*1.0)
+    print "%s\t%f" % (month, (numerator*1.0)/(denominator*1.0))
