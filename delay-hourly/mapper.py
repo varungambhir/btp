@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-To create histogram with hour of the day as buckets against avg delay minutes.
+To create bar chart with avg delay minutes vs hour_of_the_day.
 Run this job on 2001-2008 data.
 
 Output key is hour_of_the_day#delay_time
