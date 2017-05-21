@@ -13,6 +13,7 @@ with open('FINAL-output-2001-2008-arr-delay', 'r') as f:
     flt2008 = [x for x in reader]
 months=[]
 delay=[]
+
 ind=xrange(0,24)
 for i in xrange(0, len(flt2008)):
     months.append(float(flt2008[i][0]))
