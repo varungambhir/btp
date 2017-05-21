@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt # module for plotting
 import itertools
 flt2008=[]
 
-with open('arrival-delay', 'r') as f:
+with open('FINAL-output-2001-2008-arr-delay', 'r') as f:
     reader = csv.reader(f, delimiter='\t')
     flt2008 = [x for x in reader]
 months=[]
