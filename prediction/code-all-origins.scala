@@ -1,3 +1,5 @@
+sc.setLogLevel("OFF")
+
 :paste
 
 
@@ -150,8 +152,12 @@ val labelsAndPreds_lr = scaledTestData.map { point =>
     val pred = model_lr.predict(point.features)
     (pred, point.label)
 }
-val m_lr = eval_metrics(labelsAndPreds_lr)._2
+
+val m00_lr = eval_metrics(labelsAndPreds_lr)
+val m0_lr = m00_lr._1
+val m_lr = m00_lr._2
 println("Logistic Regression: precision = %.2f, recall = %.2f, F1 = %.2f, accuracy = %.2f".format(m_lr(0), m_lr(1), m_lr(2), m_lr(3)))
+println("tp = %.2f, tn = %.2f, fp = %.2f, fn = %.2f".format(m0_lr(0), m0_lr(1), m0_lr(2), m0_lr(3)))
 
 import org.apache.spark.mllib.classification.SVMWithSGD
 
@@ -167,8 +173,12 @@ val labelsAndPreds_svm = scaledTestData.map { point =>
         val pred = model_svm.predict(point.features)
         (pred, point.label)
 }
-val m_svm = eval_metrics(labelsAndPreds_svm)._2
+
+val m00_svm = eval_metrics(labelsAndPreds_svm)
+val m0_svm = m00_svm._1
+val m_svm = m00_svm._2
 println("SVM: precision = %.2f, recall = %.2f, F1 = %.2f, accuracy = %.2f".format(m_svm(0), m_svm(1), m_svm(2), m_svm(3)))
+println("tp = %.2f, tn = %.2f, fp = %.2f, fn = %.2f".format(m0_svm(0), m0_svm(1), m0_svm(2), m0_svm(3)))
 
 import org.apache.spark.mllib.tree.DecisionTree
 
@@ -185,5 +195,9 @@ val labelsAndPreds_dt = parsedTestData.map { point =>
     val pred = model_dt.predict(point.features)
     (pred, point.label)
 }
-val m_dt = eval_metrics(labelsAndPreds_dt)._2
+
+val m00_dt = eval_metrics(labelsAndPreds_dt)
+val m0_dt = m00_dt._1
+val m_dt = m00_dt._2
 println("Decision Tree: precision = %.2f, recall = %.2f, F1 = %.2f, accuracy = %.2f".format(m_dt(0), m_dt(1), m_dt(2), m_dt(3)))
+println("tp = %.2f, tn = %.2f, fp = %.2f, fn = %.2f".format(m0_dt(0), m0_dt(1), m0_dt(2), m0_dt(3)))
